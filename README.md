@@ -8,7 +8,7 @@
  2. [Nginx](#id-section2)
  3. [PostgreSQL avec extension POSTGIS](#id-section2)
  4. [Pgadmin](#id-section2)
- - [Configuration](#id-section2)
+ - [Mise en place du docker sur la SAE : Explore](#id-section2)
 
 
  ### Section 1 
