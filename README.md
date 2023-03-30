@@ -7,7 +7,7 @@
  1. [Apache](#id-section2)
  2. [Nginx](#id-section2)
  3. [PostgreSQL avec extension POSTGIS](#id-section2)
- 4. [Ppgadmin](#id-section2)
+ 4. [Pgadmin](#id-section2)
  - [Configuration](#id-section2)
 
 
