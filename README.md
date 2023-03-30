@@ -4,8 +4,11 @@
 
 
  # Table des matières 
- - [Section 1](#id-section1) 
- - [Section 2](#id-section2) 
+ - [Première installation](#id-section1) 
+ - [Configuration](#id-section2) 
+ - 1. [Apache](#id-section2)
+ - 2. [Configuration](#id-section2)
+ - 3. [Configuration](#id-section2)
 
 
  ## Section 1 
