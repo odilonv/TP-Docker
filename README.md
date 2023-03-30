@@ -3,10 +3,11 @@
 
  ## Table des matières 
  - [Première installation](#id-section1) 
- - [Configuration](#id-section2) 
+ - [Configuration & Concepts utilisés](#id-section2) 
  1. [Apache](#id-section2)
- 2. [Configuration](#id-section2)
- 3. [Configuration](#id-section2)
+ 2. [Nginx](#id-section2)
+ 3. [PostgreSQL avec extension POSTGIS](#id-section2)
+ 4. [Ppgadmin](#id-section2)
  - [Configuration](#id-section2)
 
 
