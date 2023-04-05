@@ -76,3 +76,10 @@ Apache :
 Si vous avez besoin de plusieurs points de montage du volume, vous pouvez ajouter plusieurs <code>-v</code> dans la commande.
 
 
+Aller sur localhost:89, vous ne verrez rien, c’est normal pas de panique.
+
+Créez dans votre dossier local docker, un fichier index.php avec <ode><?php echo phpinfo();</code>
+
+Retourner sur localhost:89, vous pourrez voir que tous les fichiers sont synchronisés en direct.
+
+
