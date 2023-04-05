@@ -83,3 +83,126 @@ Créez dans votre dossier local docker, un fichier index.php avec <code><?php ec
 Retourner sur localhost:89, vous pourrez voir que tous les fichiers sont synchronisés en direct.
 
 
+
+## 3. Notion de Compose
+
+● Version à utiliser : 3.8 Compose file versions and upgrading (docker.com).
+● Fichier docker-compose.yml à stocker dans votre dossier docker.
+
+- Creer un fichier compose “docker-compose.yml” :
+Pour chaque images de votre pile, créer un service dans votre fichier compose et renseigner leurs informations : 
+
+<pre><code>
+version: "3.8"
+
+services:
+  web89 :
+    image: php:8.2-apache
+    container_name: web89
+    volumes:
+      - ./web89/html:/var/www/html
+      - ./web89/apache/sites_enabled:/etc/apache2/sites_enabled
+      - ./web89/php/custom-php.ini:/use/local/etc/conf.d/custom-php.ini
+    ports:
+      - 89:80
+    links:
+      - mysql:mysql
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql1
+    environment:
+      MYSQL_DATABASE: sae
+      MYSQL_USER: sae
+      MYSQL_PASSWORD: totoLolo
+      MYSQL_ROOT_PASSWORD: totoLolo
+      UPLOAD_LIMIT: 20M
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql1/mysql:/var/lib/mysql
+      - ./mysql1/db/custom.cnf:/etc/mysql/conf.d/custom.cnf
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma1
+    depends_on:
+      - mysql
+    ports:
+      - 83:80
+    environment:
+      - PMA_HOST=mysql
+
+  web90:
+    build: web90 # dossier contenant le fichier Dockerfile
+    container_name: web90
+    volumes:
+      - ./web90/html:/var/www/html
+      - ./web90/apache/sites_enabled:/etc/apache2/sites_enabled
+      - ./web90/php/custom-php.ini:/use/local/etc/php/conf.d/custom-php.ini
+    ports:
+      - 90:80
+    links:
+      - mysql:mysql
+
+</code></pre>
+
+Puis exécuter :
+<code>docker compose up -d</code>
+
+<br>
+
+## 4. Notion de build
+
+Dans docker, créez un dossier web90, créez ensuite dans ce dossier un fichier <code>Dockerfile</code>.
+
+Voici un exemple :
+<pre><code>
+FROM php:8.2-apache
+
+# Installe Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Active le module de réécriture Apache2 et redémarre Apache2
+RUN a2enmod rewrite && service apache2 restart
+
+# Installe l'extension pdo_mysql pour PHP
+RUN docker-php-ext-install pdo_mysql
+
+# Définit le répertoire de travail par défaut
+WORKDIR /var/www/html
+
+RUN apt-get update && apt-get install -y nano 
+RUN apt-get install -y git 
+# renseignez votre mail 
+RUN git config --global user.email "odilon.vidal@icloud.com" 
+
+# renseignez votre nom de user 
+RUN git config --global user.name "odilonv"
+RUN apt-get install -y wget 
+RUN docker-php-ext-install pdo_mysql 
+RUN apt-get install -y zip
+
+</pre></code>
+
+La commande docker compose build va dans un premier temps télécharger et préparer l’image d’un conteneur décrit dans le fichier <code>web90/Dockerfile</code>
+
+La commande <code>docker compose up -d</code> va lancer :
+○ web89 : image php/8.2 -apache
+○ web90 : image php/8.2 -apache
+■ avec composer, mod_rewrite (réécriture d’url),
+■ update du système, nano, git, wget,pdo_mysql, etc.
+○ mysql5.7
+○ phpmyadmin
+● Vous pourrez atteindre la racine des serveurs web en travaillant dans les dossiers
+web89 et web90, y assurer les sauvegardes / éditions de code
+
+<br>
+
+## 5. Versionner le tout
+
+Vous pouvez versionner votre dossier de virtualisation avec le fichier docker <code>compose.yml</code>, le dossier web90 + <code>Dockerfile</code>.
+
+
+
+
