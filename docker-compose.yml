@@ -8,10 +8,10 @@ services:
       - ./web89/html:/var/www/html
       - ./web89/apache/sites_enabled:/etc/apache2/sites_enabled
       - ./web89/php/custom-php.ini:/use/local/etc/conf.d/custom-php.ini
-
     ports:
       - 89:80
-
+    links:
+      - mysql:mysql
 
   mysql:
     image: mysql:5.7
@@ -22,7 +22,6 @@ services:
       MYSQL_PASSWORD: totoLolo
       MYSQL_ROOT_PASSWORD: totoLolo
       UPLOAD_LIMIT: 20M
-
     ports:
       - 3306:3306
     volumes:
@@ -48,3 +47,5 @@ services:
       - ./web90/php/custom-php.ini:/use/local/etc/php/conf.d/custom-php.ini
     ports:
       - 90:80
+    links:
+      - mysql:mysql
