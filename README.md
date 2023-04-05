@@ -10,6 +10,7 @@
  - [Mise en place du docker sur la SAE : Explore](#id-section2)
 
 <br>
+
  ## Première installation
  
  Tout au long de ce document, nous allons vous guider dans la création et la configuration de conteneurs avec Docker.
@@ -68,7 +69,8 @@ Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/
 ## 2. Notion de Volume
 
 Placez vous dans un fichier que vous avez créé, ici “Docker”, et créer un conteneur 
-Apache : docker run -dp 89:80 -v /c/users/[Votre nom d’utilisateur]/[Votre fichier créé]:/var/www/html --name web89 php:8.2-apache
+Apache : 
+<code>docker run -dp 89:80 -v /c/users/[Votre nom d’utilisateur]/[Votre fichier créé]:/var/www/html --name web89 php:8.2-apache</code>
 
 Si vous avez besoin de plusieurs points de montage du volume, vous pouvez ajouter plusieurs “-v” dans la commande.
 
