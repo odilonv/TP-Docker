@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  web89 :
+    image: php:8.2-apache
+    container_name: web89
+    volumes:
+      - ./web89/html:/var/www/html
+      - ./web89/apache/sites_enabled:/etc/apache2/sites_enabled
+      - ./web89/php/custom-php.ini:/use/local/etc/conf.d/custom-php.ini
+
+    ports:
+      - 89:80
+
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql1
+    environment:
+      MYSQL_DATABASE: sae
+      MYSQL_USER: sae
+      MYSQL_PASSWORD: totoLolo
+      MYSQL_ROOT_PASSWORD: totoLolo
+      UPLOAD_LIMIT: 20M
+
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql1/mysql:/var/lib/mysql
+      - ./mysql1/db/custom.cnf:/etc/mysql/conf.d/custom.cnf
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma1
+    depends_on:
+      - mysql
+    ports:
+      - 83:80
+    environment:
+      - PMA_HOST=mysql
+
+  web90:
+    build: web90 # dossier contenant le fichier Dockerfile
+    container_name: web90
+    volumes:
+      - ./web90/html:/var/www/html
+      - ./web90/apache/sites_enabled:/etc/apache2/sites_enabled
+      - ./web90/php/custom-php.ini:/use/local/etc/php/conf.d/custom-php.ini
+    ports:
+      - 90:80
