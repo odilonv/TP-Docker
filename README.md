@@ -27,13 +27,13 @@ https://www.docker.com/products/docker-desktop/
 <br>
 
  
-## Configurations & Concepts utilisés
+# Configurations & Concepts utilisés
 
 Au niveau des différentes configurations, nous allons installer les conteneurs suivants : Apache, Nginx, Serveur de base de données PostgreSQL ainsi qu’un Pgadmin. 
 Cependant pour installer ceux-ci nous allons mettre en application les notions : compose, network, volume et build.
 
 
-### 1. Notion de Network :
+## 1. Notion de Network :
 
 I/Bridge
 
@@ -58,7 +58,7 @@ III/Network personnalisé
 Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/odilonv/Docker-SAE
 
 
-### 2. Notion de Volume
+## 2. Notion de Volume
 
 Placez vous dans un fichier que vous avez créé, ici “Docker”, et créer un conteneur 
 Apache : docker run -dp 89:80 -v /c/users/[Votre nom d’utilisateur]/[Votre fichier créé]:/var/www/html --name web89 php:8.2-apache
