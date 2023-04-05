@@ -10,8 +10,8 @@
    4. [Pgadmin](#id-section2)
  - [Mise en place du docker sur la SAE : Explore](#id-section2)
 
-
- ### Première installation
+<br><br>
+ ## Première installation
  
  Tout au long de ce document, nous allons vous guider dans la création et la configuration de conteneurs avec Docker.
  
