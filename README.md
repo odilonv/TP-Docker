@@ -11,7 +11,7 @@
 
 <br>
 
- ## Première installation
+## Première installation
  
  Tout au long de ce document, nous allons vous guider dans la création et la configuration de conteneurs avec Docker.
  
