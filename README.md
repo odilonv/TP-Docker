@@ -189,13 +189,13 @@ RUN apt-get install -y zip
 La commande docker compose build va dans un premier temps télécharger et préparer l’image d’un conteneur décrit dans le fichier <code>web90/Dockerfile</code>
 
 La commande <code>docker compose up -d</code> va lancer :
-○ web89 : image php/8.2 -apache
-○ web90 : image php/8.2 -apache
-■ avec composer, mod_rewrite (réécriture d’url),
-■ update du système, nano, git, wget,pdo_mysql, etc.
-○ mysql5.7
-○ phpmyadmin
-● Vous pourrez atteindre la racine des serveurs web en travaillant dans les dossiers
+- web89 : image php/8.2 -apache
+- web90 : image php/8.2 -apache
+- avec composer, mod_rewrite (réécriture d’url),
+- update du système, nano, git, wget,pdo_mysql, etc.
+- mysql5.7
+- phpmyadmin
+- Vous pourrez atteindre la racine des serveurs web en travaillant dans les dossiers
 web89 et web90, y assurer les sauvegardes / éditions de code
 
 <br>
