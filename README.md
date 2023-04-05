@@ -14,7 +14,7 @@
  
  Tout au long de ce document, nous allons vous guider dans la création et la configuration de conteneurs avec Docker.
  
-Se rendre sur le site web de coker et télécharger les fichiers d’installation : 
+Se rendre sur le site web de docker et télécharger les fichiers d’installation : 
 https://www.docker.com/
 <br>
 ![image](https://user-images.githubusercontent.com/120033089/228777236-4a0c1e44-8e10-4cd1-a994-9f270cbd5a6a.png)
