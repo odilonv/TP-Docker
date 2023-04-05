@@ -27,7 +27,42 @@ https://www.docker.com/products/docker-desktop/
 <br>
 
  
-## Installation d’un site web PHP sous docker
+## Configurations & Concepts utilisés
 
+Au niveau des différentes configurations, nous allons installer les conteneurs suivants : Apache, Nginx, Serveur de base de données PostgreSQL ainsi qu’un Pgadmin. 
+Cependant pour installer ceux-ci nous allons mettre en application les notions : compose, network, volume et build.
+
+
+### 1. Notion de Network :
+
+I/Bridge
+
+Créer un conteneur nginx en mode “bridge” :
+<code>docker run -dp 80:80 -- network bridge nginx</code>
+Vous pouvez aussi utiliser : docker run -dp 81:80 nginx car le mode bridge est le mode de réseau par défaut de Docker.
+
+Inspecter que l’installation a bien été réalisée :
+<code>docker network inspect bridge</code>
+
+Vous pouvez noter que @ip interne 172.x.x.x pour communiquer avec les autres conteneurs.
+
+II/None
+
+Avec “none” les conteneurs ne possèdent pas d’interface réseau, ils ne peuvent pas communiquer avec d’autres conteneurs ou avec l’hôte
+
+Créer un conteneur nginx en mode “none”:
+<code>docker run -dp 80:80 --network bridge nginx</code>
+
+III/Network personnalisé
+
+Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/odilonv/Docker-SAE
+
+
+### 2. Notion de Volume
+
+Placez vous dans un fichier que vous avez créé, ici “Docker”, et créer un conteneur 
+Apache : docker run -dp 89:80 -v /c/users/[Votre nom d’utilisateur]/[Votre fichier créé]:/var/www/html --name web89 php:8.2-apache
+
+Si vous avez besoin de plusieurs points de montage du volume, vous pouvez ajouter plusieurs “-v” dans la commande.
 
 
