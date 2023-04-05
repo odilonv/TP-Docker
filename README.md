@@ -78,7 +78,7 @@ Si vous avez besoin de plusieurs points de montage du volume, vous pouvez ajoute
 
 Aller sur localhost:89, vous ne verrez rien, c’est normal pas de panique.
 
-Créez dans votre dossier local docker, un fichier index.php avec <ode><?php echo phpinfo();</code>
+Créez dans votre dossier local docker, un fichier index.php avec <code><?php echo phpinfo();</code>
 
 Retourner sur localhost:89, vous pourrez voir que tous les fichiers sont synchronisés en direct.
 
