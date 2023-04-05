@@ -16,7 +16,7 @@
  
 Se rendre sur le site web de docker et télécharger les fichiers d’installation : 
 https://www.docker.com/
-<br>
+<br><br>
 ![image](https://user-images.githubusercontent.com/120033089/228777236-4a0c1e44-8e10-4cd1-a994-9f270cbd5a6a.png)
 
 Procéder à l’installation :
