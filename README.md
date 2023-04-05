@@ -1,6 +1,5 @@
 # Installation de Docker sous windows
 
-<br>
  ## Table des matières 
  - [Première installation](#id-premiereInstallation) 
  - [Configuration & Concepts utilisés](#id-section2) 
