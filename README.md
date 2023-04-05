@@ -35,7 +35,7 @@ Cependant pour installer ceux-ci nous allons mettre en application les notions :
 
 ## 1. Notion de Network :
 
-I/Bridge
+### I/Bridge
 
 Créer un conteneur nginx en mode “bridge” :
 <code>docker run -dp 80:80 -- network bridge nginx</code>
@@ -46,14 +46,14 @@ Inspecter que l’installation a bien été réalisée :
 
 Vous pouvez noter que @ip interne 172.x.x.x pour communiquer avec les autres conteneurs.
 
-II/None
+### II/None
 
 Avec “none” les conteneurs ne possèdent pas d’interface réseau, ils ne peuvent pas communiquer avec d’autres conteneurs ou avec l’hôte
 
 Créer un conteneur nginx en mode “none”:
 <code>docker run -dp 80:80 --network bridge nginx</code>
 
-III/Network personnalisé
+### III/Network personnalisé
 
 Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/odilonv/Docker-SAE
 
