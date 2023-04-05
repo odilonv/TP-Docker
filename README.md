@@ -70,8 +70,9 @@ Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/
 
 Placez vous dans un fichier que vous avez créé, ici “Docker”, et créer un conteneur 
 Apache : 
+
 <code>docker run -dp 89:80 -v /c/users/[Votre nom d’utilisateur]/[Votre fichier créé]:/var/www/html --name web89 php:8.2-apache</code>
 
-Si vous avez besoin de plusieurs points de montage du volume, vous pouvez ajouter plusieurs “-v” dans la commande.
+Si vous avez besoin de plusieurs points de montage du volume, vous pouvez ajouter plusieurs <code>-v</code> dans la commande.
 
 
