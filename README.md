@@ -9,7 +9,7 @@
    4. [Pgadmin](#id-section2)
  - [Mise en place du docker sur la SAE : Explore](#id-section2)
 
-<br><br>
+<br>
  ## Première installation
  
  Tout au long de ce document, nous allons vous guider dans la création et la configuration de conteneurs avec Docker.
@@ -32,7 +32,7 @@ https://www.docker.com/products/docker-desktop/
 Au niveau des différentes configurations, nous allons installer les conteneurs suivants : Apache, Nginx, Serveur de base de données PostgreSQL ainsi qu’un Pgadmin. 
 Cependant pour installer ceux-ci nous allons mettre en application les notions : compose, network, volume et build.
 
-
+<br>
 ## 1. Notion de Network :
 
 ### I/Bridge
@@ -45,14 +45,14 @@ Inspecter que l’installation a bien été réalisée :
 <code>docker network inspect bridge</code>
 
 Vous pouvez noter que @ip interne 172.x.x.x pour communiquer avec les autres conteneurs.
-
+<br>
 ### II/None
 
 Avec “none” les conteneurs ne possèdent pas d’interface réseau, ils ne peuvent pas communiquer avec d’autres conteneurs ou avec l’hôte
 
 Créer un conteneur nginx en mode “none”:
 <code>docker run -dp 80:80 --network bridge nginx</code>
-
+<br>
 ### III/Network personnalisé
 
 Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/odilonv/Docker-SAE
