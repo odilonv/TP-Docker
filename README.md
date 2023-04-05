@@ -63,7 +63,7 @@ Créer un conteneur nginx en mode “none”:
 
 ### III/Network personnalisé
 
-Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/odilonv/Docker-SAE
+Cette notion sera évoquée dans le dépôt GitHub suivant : https://github.com/esclapezl/Docker-RichVote
 
 <br>
 
